@@ -6,11 +6,11 @@ class CollaboratorService {
     this.httpClient = new HttpClient(`${process.env.REACT_APP_API_URL}`);
   }
   async listCollaborator() {
-    return this.httpClient.get('/collaborator');
+    return this.httpClient.get('collaborator');
   }
 
   async listCollaboratorOne(id: string) {
-    return this.httpClient.get(`/collaborator/${id}`);
+    return this.httpClient.get(`collaborator/${id}`);
   }
 
   async deleteCollaboratorOne(id: string) {
