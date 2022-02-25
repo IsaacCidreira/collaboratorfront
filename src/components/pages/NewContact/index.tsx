@@ -60,7 +60,7 @@ const NewContact = () => {
       console.log(error);
     } finally {
       navigate('/');
-      location.reload();
+      
     }
   }
   return (
