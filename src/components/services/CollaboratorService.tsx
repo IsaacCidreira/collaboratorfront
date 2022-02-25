@@ -3,7 +3,7 @@ import { HttpClient } from './utils/HttpClient';
 class CollaboratorService {
   private httpClient: InstanceType<new (...args: []) => any>;
   constructor() {
-    this.httpClient = new HttpClient('http://localhost:3333');
+    this.httpClient = new HttpClient(`${process.env.REACT_APP_API_URL}`);
   }
   async listCollaborator() {
     return this.httpClient.get('/collaborator');
@@ -14,7 +14,9 @@ class CollaboratorService {
   }
 
   async deleteCollaboratorOne(id: string) {
-    return this.httpClient.delete(`http://localhost:3333/collaborator/${id}`);
+    return this.httpClient.delete(
+      `${process.env.REACT_APP_API_URL}/collaborator/${id}`,
+    );
   }
 
   async postCollaborator(
@@ -23,12 +25,15 @@ class CollaboratorService {
     telefone: string,
     url: string,
   ) {
-    return this.httpClient.post('http://localhost:3333/collaborator', {
-      name: name,
-      cargo: cargo,
-      telefone: telefone,
-      url: url,
-    });
+    return this.httpClient.post(
+      `${process.env.REACT_APP_API_URL}/collaborator`,
+      {
+        name: name,
+        cargo: cargo,
+        telefone: telefone,
+        url: url,
+      },
+    );
   }
 
   async puttCollaborator(
