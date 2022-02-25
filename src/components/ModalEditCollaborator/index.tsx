@@ -92,7 +92,7 @@ export function Modal({ id, setModal, modal }: IModal): any {
     }
   }
 
-  if (collaborator && modal)
+  if (collaborator && modal && id)
     return (
       <Overlay>
         <Container>
