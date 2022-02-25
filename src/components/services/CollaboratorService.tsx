@@ -15,7 +15,7 @@ class CollaboratorService {
 
   async deleteCollaboratorOne(id: string) {
     return this.httpClient.delete(
-      `${process.env.REACT_APP_API_URL}/collaborator/${id}`,
+      `${process.env.REACT_APP_API_URL}collaborator/${id}`,
     );
   }
 
@@ -26,7 +26,7 @@ class CollaboratorService {
     url: string,
   ) {
     return this.httpClient.post(
-      `${process.env.REACT_APP_API_URL}/collaborator`,
+      `${process.env.REACT_APP_API_URL}collaborator`,
       {
         name: name,
         cargo: cargo,
@@ -43,7 +43,7 @@ class CollaboratorService {
     telefone: string,
     url: string,
   ) {
-    return this.httpClient.put(`http://localhost:3333/collaborator/${id}`, {
+    return this.httpClient.put( `${process.env.REACT_APP_API_URL}collaborator/${id}`, {
       name: name,
       cargo: cargo,
       telefone: telefone,
